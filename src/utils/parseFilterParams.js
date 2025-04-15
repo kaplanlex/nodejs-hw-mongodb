@@ -6,20 +6,20 @@ const parseType = (type) => {
   if (isType(type)) return type;
 };
 
-const parseIsFavorite = (isFavorite) => {
-  if (isFavorite === 'true' || isFavorite === '1') return true;
-  if (isFavorite === 'false' || isFavorite === '0') return false;
+const parseisFavourite = (isFavourite) => {
+  if (isFavourite === 'true' || isFavourite === '1') return true;
+  if (isFavourite === 'false' || isFavourite === '0') return false;
   return undefined;
 };
 
 export const parseFilterParams = (query) => {
-  const { type, isFavorite } = query;
+  const { type, isFavourite } = query;
 
   const parsedType = parseType(type);
-  const parsedIsFavorite = parseIsFavorite(isFavorite);
+  const parsedisFavourite = parseisFavourite(isFavourite);
 
   return {
     type: parsedType,
-    isFavorite: parsedIsFavorite,
+    isFavourite: parsedisFavourite,
   };
 };

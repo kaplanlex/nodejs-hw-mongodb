@@ -18,7 +18,7 @@ export const createContactSchema = Joi.object({
     'string.min': 'Email is too short',
     'string.max': 'Email is too long',
   }),
-  isFavorite: Joi.boolean(),
+  isFavourite: Joi.boolean(),
   contactType: Joi.string()
     .valid('work', 'home', 'personal')
     .min(3)
@@ -49,7 +49,7 @@ export const updateContactSchema = Joi.object({
     'string.min': 'Email is too short',
     'string.max': 'Email is too long',
   }),
-  isFavorite: Joi.boolean(),
+  isFavourite: Joi.boolean(),
   contactType: Joi.string()
     .min(3)
     .max(20)
