@@ -1,20 +1,19 @@
-import contactsRouter from './routers/contacts.js';
+import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import { errorHandler } from './middlewares/errorHandler.js';
 import express from 'express';
 import { getEnvVar } from './utils/getEnvVar.js';
 import { notFoundHandler } from './middlewares/notFoundHandler.js';
 import pino from 'pino-http';
+import router from './routers/index.js';
 
 const PORT = Number(getEnvVar('PORT', '3000'));
 
 export const setupServer = () => {
   const app = express();
   app.use(express.json());
-
   app.use(cors());
-
-
+  app.use(cookieParser());
   app.use(
     pino({
       transport: {
@@ -23,10 +22,8 @@ export const setupServer = () => {
     }),
   );
 
-  app.use(contactsRouter);
-
+  app.use(router);
   app.use('*', notFoundHandler);
-
   app.use(errorHandler);
 
   app.listen(PORT, () => {
