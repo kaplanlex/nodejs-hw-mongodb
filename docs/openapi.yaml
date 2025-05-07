@@ -11,7 +11,7 @@ tags:
     description: contacts
 servers:
   - url: http://localhost:3000
-  - url: https://.com
+  - url: https://nodejs-hw-mongodb-7-0g0a.onrender.com
 paths:
   /contacts/{id}:
     get:
