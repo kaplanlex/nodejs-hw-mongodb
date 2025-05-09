@@ -254,7 +254,7 @@
           },
           {
             "in": "query",
-            "name": "contactType",
+            "name": "type",
             "description": "Type of contact",
             "required": false,
             "schema": {

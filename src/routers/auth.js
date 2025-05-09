@@ -6,7 +6,7 @@ import {
   loginUserSchema,
   registerUserSchema,
   requestResetEmailSchema,
-  resetPasswordSchema, 
+  resetPasswordSchema,
 } from '../validation/auth.js';
 import {
   logoutUserController,
